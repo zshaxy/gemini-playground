@@ -44,6 +44,7 @@ body {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     scroll-behavior: smooth;
@@ -610,4 +611,49 @@ body {
 .fps-help {
     color: #666;
     font-size: 12px;
+}
+
+.input-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 16px 0;
+}
+.input-action-row input[type="text"] {
+    flex: 1 1 300px;
+    min-width: 120px;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-action-row button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-action-row button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+.input-action-row button:not(:last-child) {
+    margin-right: 0;
+}
+@media (max-width: 768px) {
+    .input-action-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .input-action-row input[type="text"] {
+        max-width: 100%;
+    }
 }
